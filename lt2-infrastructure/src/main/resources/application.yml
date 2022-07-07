@@ -1,0 +1,20 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database: mysql
+  datasource:
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:rhqmffls13!}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${DB_URL:localhost}:3306/${DB_NAME:lt2hexagonal}?characterEncoding=UTF-8&serverTimezone=UTC
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+jwt:
+  secretKey: ${SECRET_KEY:TFRFU0VSVkVS}
+  accessExp: ${ACCESS_EXP:10000}
+  refreshExp: ${REFRESH_EXP:1000000}
+
+socket:
+  port: ${SOCKET_PORT:8081}
