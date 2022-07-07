@@ -22,6 +22,7 @@ dependencies {
     implementation(Dependencies.SPRING_STARTER)
     runtimeOnly(Dependencies.MYSQL_CONNECTOR)
     implementation(Dependencies.JACKSON)
+    implementation(Dependencies.JWT)
     implementation(project(":lt2-application"))
 }
 
