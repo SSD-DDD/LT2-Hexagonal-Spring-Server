@@ -1,5 +1,5 @@
 package annotation
 
 @Retention(AnnotationRetention.RUNTIME)
-@Target(AnnotationTarget.TYPE)
+@Target(AnnotationTarget.CLASS)
 annotation class Aggregate()
