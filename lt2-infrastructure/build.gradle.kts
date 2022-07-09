@@ -23,7 +23,7 @@ dependencies {
     runtimeOnly(Dependencies.MYSQL_CONNECTOR)
     implementation(Dependencies.JACKSON)
     implementation(Dependencies.JWT)
-    implementation(project(":lt2-application"))
+    implementation(project(":lt2-domain"))
 }
 
 allOpen {
