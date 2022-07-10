@@ -1,4 +1,4 @@
-package com.lt2.lt2hexagonalspringserver.domain.user.presentation.entity
+package com.lt2.lt2hexagonalspringserver.domain.user.domain
 
 import com.lt2.lt2hexagonalspringserver.global.entity.BaseUUIDEntity
 import org.jetbrains.annotations.NotNull
@@ -16,6 +16,12 @@ class UserEntity(
     val password: String,
 
     @field:NotNull
-    val name: String
+    val name: String,
 
-): BaseUUIDEntity()
+    monney: Long
+
+): BaseUUIDEntity() {
+
+    var monney = monney
+        protected set
+}
