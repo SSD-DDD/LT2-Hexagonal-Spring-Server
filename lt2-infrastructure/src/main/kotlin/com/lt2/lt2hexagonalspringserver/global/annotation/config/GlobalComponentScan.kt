@@ -1,6 +1,6 @@
 package com.lt2.lt2hexagonalspringserver.global.annotation.config
 
-import annotation.UseCase
+import annotation.DomainService
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.FilterType
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.FilterType
     includeFilters = [
         ComponentScan.Filter(
             type = FilterType.ANNOTATION,
-            value = [UseCase::class]
+            value = [DomainService::class]
         )
     ]
 )
