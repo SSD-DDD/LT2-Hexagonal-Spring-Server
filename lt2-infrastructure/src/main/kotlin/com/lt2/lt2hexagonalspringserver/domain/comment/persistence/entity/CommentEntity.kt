@@ -1,7 +1,7 @@
 package com.lt2.lt2hexagonalspringserver.domain.comment.persistence.entity
 
 import com.lt2.lt2hexagonalspringserver.domain.feed.persistence.entity.FeedEntity
-import com.lt2.lt2hexagonalspringserver.domain.user.presentation.entity.UserEntity
+import com.lt2.lt2hexagonalspringserver.domain.user.domain.UserEntity
 import com.lt2.lt2hexagonalspringserver.global.entity.BaseTimeEntity
 import javax.persistence.Entity
 import javax.persistence.FetchType

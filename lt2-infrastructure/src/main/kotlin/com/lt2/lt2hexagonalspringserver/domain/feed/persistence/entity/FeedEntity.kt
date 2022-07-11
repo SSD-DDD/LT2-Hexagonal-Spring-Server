@@ -1,6 +1,6 @@
 package com.lt2.lt2hexagonalspringserver.domain.feed.persistence.entity
 
-import com.lt2.lt2hexagonalspringserver.domain.user.presentation.entity.UserEntity
+import com.lt2.lt2hexagonalspringserver.domain.user.domain.UserEntity
 import com.lt2.lt2hexagonalspringserver.global.entity.BaseTimeEntity
 import org.jetbrains.annotations.NotNull
 import javax.persistence.Entity
