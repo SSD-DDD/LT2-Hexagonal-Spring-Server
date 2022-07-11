@@ -1,2 +1,5 @@
-package domain.user.api.dto.request 
+package domain.user.api.dto.request
 
+class DomainSignUpRequest {
+
+}
