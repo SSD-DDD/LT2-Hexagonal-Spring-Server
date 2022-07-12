@@ -1,6 +1,6 @@
-package com.lt2.lt2hexagonalspringserver.domain.feed.persistence.repository
+package com.lt2.lt2hexagonalspringserver.domain.feed.domain.repository
 
-import com.lt2.lt2hexagonalspringserver.domain.feed.persistence.entity.FeedEntity
+import com.lt2.lt2hexagonalspringserver.domain.feed.domain.FeedEntity
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 import java.util.UUID

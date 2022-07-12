@@ -1,4 +1,4 @@
-package com.lt2.lt2hexagonalspringserver.domain.feed.persistence.entity
+package com.lt2.lt2hexagonalspringserver.domain.feed.domain
 
 import com.lt2.lt2hexagonalspringserver.domain.user.domain.UserEntity
 import com.lt2.lt2hexagonalspringserver.global.entity.BaseTimeEntity
