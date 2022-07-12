@@ -7,7 +7,7 @@ import user.api.dto.request.CreateUserDomainRequest
 import user.spi.UserRepositorySpi
 
 @DomainService
-class CreateUserImpl(
+class CreateUserApiImpl(
     private val userRepositorySpi: UserRepositorySpi
 ): CreateUserApi {
 

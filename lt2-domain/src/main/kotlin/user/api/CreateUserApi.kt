@@ -1,9 +1,7 @@
 package user.api
 
-import annotation.Api
-import user.api.dto.request.DomainSignUpRequest
+import user.api.dto.request.CreateUserDomainRequest
 
-@Api
-interface UserSignUpApi {
-    fun userSignUp(request: DomainSignUpRequest)
+interface CreateUserApi {
+    fun saveUser(request: CreateUserDomainRequest)
 }
