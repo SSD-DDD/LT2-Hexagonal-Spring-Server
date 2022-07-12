@@ -7,5 +7,5 @@ import java.util.UUID
 
 @Repository
 interface UserRepository: CrudRepository<UserEntity, UUID> {
-    
+    fun findByAccountId(accountId: String): UserEntity?
 }
