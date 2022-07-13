@@ -5,5 +5,8 @@ import error.ExceptionAttribute
 data class ErrorResponse(
     override val status: Int,
     override val message: String
-): ExceptionAttribute {
+) : ExceptionAttribute {
+
+    override fun toString() =
+        "{\n\t\"status\": $status,\n\t\"message\": \"$message\"\n}"
 }
