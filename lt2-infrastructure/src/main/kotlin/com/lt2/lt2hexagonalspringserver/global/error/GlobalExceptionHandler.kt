@@ -1,7 +1,7 @@
 package com.lt2.lt2hexagonalspringserver.global.error
 
 import error.Lt2Exception
-import error.code.ErrorStatus.BAD_REQUEST_400
+import error.code.GlobalErrorStatus.BAD_REQUEST_400
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.validation.BindException

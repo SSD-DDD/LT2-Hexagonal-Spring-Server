@@ -35,4 +35,7 @@ class UserPersistenceAdapter(
 
     override fun passwordMatch(rawPassword: String, encodedPassword: String) =
         passwordEncoder.matches(rawPassword, encodedPassword)
+
+    fun jpaUserByAccountId(accountId: String) =
+        userRepository.findByAccountId(accountId) ?: throw UserNotFoundException
 }
