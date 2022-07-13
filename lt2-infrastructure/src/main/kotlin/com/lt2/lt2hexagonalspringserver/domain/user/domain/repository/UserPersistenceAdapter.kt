@@ -2,10 +2,12 @@ package com.lt2.lt2hexagonalspringserver.domain.user.domain.repository
 
 import com.lt2.lt2hexagonalspringserver.domain.user.mapper.UserMapper
 import com.lt2.lt2hexagonalspringserver.global.annotation.Adapter
+import com.lt2.lt2hexagonalspringserver.global.security.jwt.JwtTokenProvider
 import org.springframework.security.crypto.password.PasswordEncoder
 import user.User
 import user.exception.UserAlreadyExistsException
 import user.exception.UserNotFoundException
+import user.spi.JwtTokenSpi
 import user.spi.UserPasswordSpi
 import user.spi.UserRepositorySpi
 
@@ -13,8 +15,9 @@ import user.spi.UserRepositorySpi
 class UserPersistenceAdapter(
     private val userRepository: UserRepository,
     private val userMapper: UserMapper,
-    private val passwordEncoder: PasswordEncoder
-): UserRepositorySpi, UserPasswordSpi {
+    private val passwordEncoder: PasswordEncoder,
+    private val jwtTokenProvider: JwtTokenProvider
+): UserRepositorySpi, UserPasswordSpi, JwtTokenSpi {
 
     override fun saveUser(user: User) {
         val userEntity = userMapper.userDomainToEntity(user)
@@ -39,4 +42,6 @@ class UserPersistenceAdapter(
 
     fun jpaUserByAccountId(accountId: String) =
         userRepository.findByAccountId(accountId) ?: throw UserNotFoundException
+
+    override fun generateAccessToken(accountId: String) = jwtTokenProvider.generateAccessToken(accountId)
 }
