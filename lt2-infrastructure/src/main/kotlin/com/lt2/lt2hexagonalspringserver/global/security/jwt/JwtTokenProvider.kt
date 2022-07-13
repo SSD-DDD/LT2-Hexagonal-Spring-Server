@@ -1,8 +1,7 @@
 package com.lt2.lt2hexagonalspringserver.global.security.jwt
 
 import auth.RefreshToken
-import com.lt2.lt2hexagonalspringserver.domain.auth.domain.repository.RefreshTokenPersistenceAdapter
-import com.lt2.lt2hexagonalspringserver.domain.auth.domain.repository.RefreshTokenRepository
+import auth.spi.RefreshTokenSaveSpi
 import com.lt2.lt2hexagonalspringserver.global.security.jwt.JwtProperties.Companion.ACCESS
 import com.lt2.lt2hexagonalspringserver.global.security.jwt.JwtProperties.Companion.REFRESH
 import io.jsonwebtoken.Jwts
@@ -13,15 +12,15 @@ import java.util.*
 @Component
 class JwtTokenProvider(
     private val jwtProperties: JwtProperties,
-    private val refreshTokenPersistenceAdapter: RefreshTokenPersistenceAdapter
+    private val refreshTokenSaveSpi: RefreshTokenSaveSpi
 ) {
 
     fun generateAccessToken(accountId: String) = generateToken(accountId, jwtProperties.accessExp, ACCESS)
 
     fun generateRefreshToken(accountId: String): String {
-        val refreshToken =  generateToken(accountId, jwtProperties.refreshExp, REFRESH)
+        val refreshToken = generateToken(accountId, jwtProperties.refreshExp, REFRESH)
 
-        refreshTokenPersistenceAdapter.saveRefreshToken(
+        refreshTokenSaveSpi.saveRefreshToken(
             RefreshToken(
                 accountId = accountId,
                 token = refreshToken,

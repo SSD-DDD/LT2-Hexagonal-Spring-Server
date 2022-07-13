@@ -12,6 +12,7 @@ import user.api.CreateUserApi
 import user.api.SignInUserApi
 import user.api.dto.request.CreateUserDomainRequest
 import user.api.dto.request.SignInUserDomainRequest
+import user.api.dto.response.TokenDomainResponse
 import javax.validation.Valid
 
 @RequestMapping("/users")
@@ -34,12 +35,12 @@ class UserController(
     }
 
     @PostMapping("/token")
-    fun userSignIn(@RequestBody @Valid request: SignInUserWebRequest) {
+    fun userSignIn(@RequestBody @Valid request: SignInUserWebRequest): TokenDomainResponse {
         val domainRequest = SignInUserDomainRequest(
             accountId = request.accountId,
             password = request.password
         )
 
-        signInUserApi.signInUser(domainRequest)
+        return signInUserApi.signInUser(domainRequest)
     }
 }

@@ -1,4 +1,7 @@
 package auth.spi
 
-class RefreshTokenSpi {
+import annotation.Spi
+
+@Spi
+interface RefreshTokenSpi: RefreshTokenSaveSpi {
 }

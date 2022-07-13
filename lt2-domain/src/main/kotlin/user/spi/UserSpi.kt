@@ -1,4 +1,7 @@
 package user.spi
 
-class UserSpi {
+import annotation.Spi
+
+@Spi
+interface UserSpi: UserRepositorySpi {
 }
