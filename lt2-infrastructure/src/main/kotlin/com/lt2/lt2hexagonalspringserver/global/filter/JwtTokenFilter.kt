@@ -1,6 +1,7 @@
-package com.lt2.lt2hexagonalspringserver.global.security.jwt
+package com.lt2.lt2hexagonalspringserver.global.filter
 
 import com.lt2.lt2hexagonalspringserver.global.security.jwt.JwtProperties.Companion.HEADER
+import com.lt2.lt2hexagonalspringserver.global.security.jwt.JwtTokenParser
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.web.filter.OncePerRequestFilter
 import javax.servlet.FilterChain
