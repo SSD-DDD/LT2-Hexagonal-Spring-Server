@@ -4,5 +4,4 @@ data class TokenDomainResponse(
 
     val accessToken: String,
 
-    val refreshToken: String
 )
