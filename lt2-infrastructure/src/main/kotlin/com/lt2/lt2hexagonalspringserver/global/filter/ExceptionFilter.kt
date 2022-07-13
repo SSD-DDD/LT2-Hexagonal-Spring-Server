@@ -1,8 +1,6 @@
 package com.lt2.lt2hexagonalspringserver.global.filter
 
-import com.fasterxml.jackson.databind.ObjectMapper
 import com.lt2.lt2hexagonalspringserver.global.error.ErrorResponse
-import error.ExceptionAttribute
 import error.Lt2Exception
 import error.code.GlobalErrorMessage.INTERNAL_SERVER_ERROR
 import error.code.GlobalErrorStatus.INTERNAL_SERVER_ERROR_500
