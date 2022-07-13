@@ -1,11 +1,11 @@
 package user.exception
 
-import error.code.ErrorMessage
-import error.code.ErrorStatus
 import error.Lt2Exception
+import error.code.ErrorMessage.USER_NOT_FOUND
+import error.code.ErrorStatus.NOT_FOUND_404
 
 object UserNotFoundException: Lt2Exception(
-    ErrorStatus.USER_NOT_FOUND,
-    ErrorMessage.USER_NOT_FOUND
+    NOT_FOUND_404,
+    USER_NOT_FOUND
 ) {
 }

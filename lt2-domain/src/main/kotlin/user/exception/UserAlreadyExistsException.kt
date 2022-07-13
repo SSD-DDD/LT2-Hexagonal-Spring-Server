@@ -1,11 +1,11 @@
 package user.exception
 
-import error.code.ErrorMessage
-import error.code.ErrorStatus
 import error.Lt2Exception
+import error.code.ErrorMessage.USER_NOT_FOUND
+import error.code.ErrorStatus.CONFLICT_409
 
 object UserAlreadyExistsException: Lt2Exception(
-    ErrorStatus.USER_ALREADY_EXISTS,
-    ErrorMessage.USER_ALREADY_EXISTS
+    CONFLICT_409,
+    USER_NOT_FOUND
 ) {
 }
