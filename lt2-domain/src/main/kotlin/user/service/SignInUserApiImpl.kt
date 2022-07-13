@@ -22,7 +22,7 @@ class SignInUserApiImpl(
         if (!userPasswordSpi.passwordMatch(user.password, request.password)) throw PasswordMismatchException
 
         val accessToken = jwtTokenSpi.generateAccessToken(request.accountId)
-        
+
         return TokenDomainResponse(accessToken)
     }
 }
