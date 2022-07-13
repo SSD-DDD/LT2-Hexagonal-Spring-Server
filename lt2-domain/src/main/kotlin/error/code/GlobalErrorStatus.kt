@@ -1,7 +1,5 @@
 package error.code
 
-import error.ExceptionAttribute
-
 object GlobalErrorStatus {
 
     const val BAD_REQUEST_400 = 400
