@@ -36,5 +36,4 @@ class GlobalExceptionHandler {
             HttpStatus.valueOf(BAD_REQUEST_400)
         )
     }
-
 }
