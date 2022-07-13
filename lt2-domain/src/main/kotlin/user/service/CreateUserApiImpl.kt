@@ -5,6 +5,7 @@ import user.User
 import user.api.CreateUserApi
 import user.api.dto.request.CreateUserDomainRequest
 import user.spi.UserRepositorySpi
+import java.util.*
 
 @DomainService
 class CreateUserApiImpl(
@@ -12,18 +13,18 @@ class CreateUserApiImpl(
 ): CreateUserApi {
 
     override fun saveUser(request: CreateUserDomainRequest) {
-        val user = userRepositorySpi.findByAccountId(request.accountId)
+        userRepositorySpi.checkUserExistsByAccountId(request.accountId)
 
-        userRepositorySpi.saveUser(user.toUser(request))
+        userRepositorySpi.saveUser(request.toUser())
     }
 
-    private fun User.toUser(request: CreateUserDomainRequest) = User(
-        id = id,
-        accountId = request.accountId,
-        password = userRepositorySpi.passwordEncode(request.password),
-        name = request.name,
+    private fun CreateUserDomainRequest.toUser() = User(
+        id = UUID(0, 0),
+        accountId = accountId,
+        password = userRepositorySpi.passwordEncode(password),
+        name = name,
         money = moneyGenerate()
     )
 
-    private fun moneyGenerate() = (Math.random() * 10000 + 1 - 5000).toLong() + 5000
+    private fun moneyGenerate() = (Math.random() * 100000 + 1 - 50000).toLong() + 50000
 }
