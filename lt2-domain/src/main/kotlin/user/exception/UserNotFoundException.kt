@@ -1,11 +1,11 @@
-package com.lt2.lt2hexagonalspringserver.domain.user.exception
+package user.exception
 
-import com.lt2.lt2hexagonalspringserver.domain.error.Lt2Exception
-import com.lt2.lt2hexagonalspringserver.domain.user.ErrorMessage
-import com.lt2.lt2hexagonalspringserver.domain.user.ErrorStatus
+import error.code.ErrorMessage
+import error.code.ErrorStatus
+import error.Lt2Exception
 
 object UserNotFoundException: Lt2Exception(
-    ErrorStatus.USER_NOT_FOUND, ErrorMessage.USER_NOT_FOUND
+    ErrorStatus.USER_NOT_FOUND,
+    ErrorMessage.USER_NOT_FOUND
 ) {
-    const val EXCEPTION = ErrorMessage.USER_NOT_FOUND
 }
