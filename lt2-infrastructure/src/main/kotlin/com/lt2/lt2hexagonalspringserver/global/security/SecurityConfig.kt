@@ -1,6 +1,5 @@
 package com.lt2.lt2hexagonalspringserver.global.security
 
-import com.lt2.lt2hexagonalspringserver.global.filter.FilterConfig
 import com.lt2.lt2hexagonalspringserver.global.security.jwt.JwtTokenParser
 import org.springframework.context.annotation.Bean
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
