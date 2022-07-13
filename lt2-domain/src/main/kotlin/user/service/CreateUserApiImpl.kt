@@ -4,12 +4,14 @@ import annotation.DomainService
 import user.User
 import user.api.CreateUserApi
 import user.api.dto.request.CreateUserDomainRequest
+import user.spi.UserPasswordSpi
 import user.spi.UserRepositorySpi
 import java.util.*
 
 @DomainService
 class CreateUserApiImpl(
-    private val userRepositorySpi: UserRepositorySpi
+    private val userRepositorySpi: UserRepositorySpi,
+    private val userPasswordSpi: UserPasswordSpi
 ): CreateUserApi {
 
     override fun saveUser(request: CreateUserDomainRequest) {
@@ -21,7 +23,7 @@ class CreateUserApiImpl(
     private fun CreateUserDomainRequest.toUser() = User(
         id = UUID(0, 0),
         accountId = accountId,
-        password = userRepositorySpi.passwordEncode(password),
+        password = userPasswordSpi.passwordEncode(password),
         name = name,
         money = moneyGenerate()
     )
