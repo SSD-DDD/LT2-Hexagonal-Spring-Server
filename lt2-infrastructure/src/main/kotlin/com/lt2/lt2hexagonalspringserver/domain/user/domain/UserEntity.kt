@@ -12,17 +12,29 @@ class UserEntity(
 
     override val id: UUID,
 
-    @field:NotNull
-    val accountId: String,
+    accountId: String,
 
-    @field:NotNull
-    val password: String,
+    password: String,
 
-    @field:NotNull
-    val name: String,
+    name: String,
 
-    val money: Long
+    money: Long
 
 ): BaseUUIDEntity() {
 
+    @field:NotNull
+    var accountId = accountId
+        protected set
+
+    @field:NotNull
+    var password = password
+        protected set
+
+    @field:NotNull
+    var name = name
+        protected set
+
+    @field:NotNull
+    var money = money
+        protected set
 }
