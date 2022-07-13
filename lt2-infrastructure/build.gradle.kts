@@ -23,6 +23,7 @@ dependencies {
     runtimeOnly(Dependencies.MYSQL_CONNECTOR)
     implementation(Dependencies.JACKSON)
     implementation(Dependencies.JWT)
+    implementation(Dependencies.REDIS)
     implementation(project(":lt2-domain"))
 }
 
