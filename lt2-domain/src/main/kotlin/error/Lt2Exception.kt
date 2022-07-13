@@ -1,4 +1,4 @@
-package error.exception
+package error
 
 abstract class Lt2Exception(
     override val status: Int,

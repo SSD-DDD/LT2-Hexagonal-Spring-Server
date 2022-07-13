@@ -1,4 +1,4 @@
-package error.exception
+package error
 
 interface ExceptionAttribute {
     val status: Int
