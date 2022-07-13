@@ -1,4 +1,5 @@
 package auth.spi
 
-interface RefreshTokenSpi {
+interface CreateRefreshTokenSpi {
+    fun generateRefreshToken(accountId: String): String
 }
