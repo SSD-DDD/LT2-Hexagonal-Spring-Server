@@ -6,6 +6,7 @@ import org.springframework.security.crypto.password.PasswordEncoder
 import user.User
 import user.exception.UserAlreadyExistsException
 import user.exception.UserNotFoundException
+import user.spi.UserPasswordSpi
 import user.spi.UserRepositorySpi
 
 @Adapter
@@ -13,7 +14,7 @@ class UserPersistenceAdapter(
     private val userRepository: UserRepository,
     private val userMapper: UserMapper,
     private val passwordEncoder: PasswordEncoder
-): UserRepositorySpi {
+): UserRepositorySpi, UserPasswordSpi {
 
     override fun saveUser(user: User) {
         val userEntity = userMapper.userDomainToEntity(user)
