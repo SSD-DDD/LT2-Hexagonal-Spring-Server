@@ -1,6 +1,6 @@
 package error.code
 
-object ErrorStatus {
+object GlobalErrorStatus {
 
     const val BAD_REQUEST_400 = 400
 
