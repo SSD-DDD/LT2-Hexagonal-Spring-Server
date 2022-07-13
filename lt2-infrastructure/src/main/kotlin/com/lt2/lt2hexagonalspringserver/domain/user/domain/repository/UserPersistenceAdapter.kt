@@ -4,6 +4,8 @@ import com.lt2.lt2hexagonalspringserver.domain.user.mapper.UserMapper
 import com.lt2.lt2hexagonalspringserver.global.annotation.Adapter
 import org.springframework.security.crypto.password.PasswordEncoder
 import user.User
+import user.exception.UserAlreadyExistsException
+import user.exception.UserNotFoundException
 import user.spi.UserRepositorySpi
 
 @Adapter
@@ -18,8 +20,14 @@ class UserPersistenceAdapter(
         userRepository.save(userEntity)
     }
 
+    override fun checkUserExistsByAccountId(accountId: String) {
+        userRepository.findByAccountId(accountId)?.let {
+            throw UserAlreadyExistsException
+        }
+    }
+
     override fun findByAccountId(accountId: String): User {
-        val userEntity = userRepository.findByAccountId(accountId) ?: throw RuntimeException()
+        val userEntity = userRepository.findByAccountId(accountId) ?: throw UserNotFoundException
         return userMapper.userEntityToDomain(userEntity)
     }
 
