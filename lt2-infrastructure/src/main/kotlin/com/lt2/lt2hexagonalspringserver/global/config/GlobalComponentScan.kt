@@ -1,4 +1,4 @@
-package com.lt2.lt2hexagonalspringserver.global.annotation.config
+package com.lt2.lt2hexagonalspringserver.global.config
 
 import annotation.DomainService
 import org.springframework.context.annotation.ComponentScan
