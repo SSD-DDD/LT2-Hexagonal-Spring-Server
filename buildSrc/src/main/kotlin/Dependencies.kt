@@ -12,4 +12,6 @@ object Dependencies {
     const val MYSQL_CONNECTOR = "mysql:mysql-connector-java"
 
     const val JWT = "io.jsonwebtoken:jjwt:${DependencyVersions.JWT_VERSION}"
+
+    const val REDIS = "org.springframework.boot:spring-boot-starter-data-redis"
 }

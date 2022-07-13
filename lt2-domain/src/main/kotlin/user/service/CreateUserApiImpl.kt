@@ -4,14 +4,14 @@ import annotation.DomainService
 import user.User
 import user.api.CreateUserApi
 import user.api.dto.request.CreateUserDomainRequest
-import user.spi.UserPasswordSpi
+import user.spi.UserSecuritySpi
 import user.spi.UserRepositorySpi
 import java.util.*
 
 @DomainService
 class CreateUserApiImpl(
     private val userRepositorySpi: UserRepositorySpi,
-    private val userPasswordSpi: UserPasswordSpi
+    private val userPasswordSpi: UserSecuritySpi
 ): CreateUserApi {
 
     override fun saveUser(request: CreateUserDomainRequest) {

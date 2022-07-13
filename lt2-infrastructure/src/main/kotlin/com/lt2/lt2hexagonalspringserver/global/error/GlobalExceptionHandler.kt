@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice
 @RestControllerAdvice
 class GlobalExceptionHandler {
 
-    @ExceptionHandler(Lt2Exception::class)
+/*    @ExceptionHandler(Lt2Exception::class)
     fun errorHandle(e: Lt2Exception): ResponseEntity<ErrorResponse> {
         val errorStatus = e.status
         val errorMessage = e.message
@@ -21,7 +21,7 @@ class GlobalExceptionHandler {
             ErrorResponse(errorStatus, errorMessage),
             HttpStatus.valueOf(errorStatus)
         )
-    }
+    }*/
 
     @ExceptionHandler(BindException::class)
     fun bindException(e: BindException): ResponseEntity<BindExceptionResponse> {
