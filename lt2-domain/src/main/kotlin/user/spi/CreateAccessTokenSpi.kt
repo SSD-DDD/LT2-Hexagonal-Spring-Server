@@ -3,6 +3,6 @@ package user.spi
 import annotation.Spi
 
 @Spi
-interface JwtTokenSpi {
+interface CreateAccessTokenSpi {
     fun generateAccessToken(accountId: String): String
 }
