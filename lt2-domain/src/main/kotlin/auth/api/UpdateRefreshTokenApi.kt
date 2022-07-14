@@ -1,4 +1,7 @@
 package auth.api
 
-interface UpdateRefreshToken {
+import user.api.dto.response.TokenDomainResponse
+
+interface UpdateRefreshTokenApi {
+    fun execute(token: String): TokenDomainResponse
 }
