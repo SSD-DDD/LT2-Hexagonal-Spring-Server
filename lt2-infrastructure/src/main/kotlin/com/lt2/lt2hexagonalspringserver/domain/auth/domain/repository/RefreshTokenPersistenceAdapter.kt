@@ -14,12 +14,26 @@ import user.spi.dto.SpiTokenResponse
 @Adapter
 class RefreshTokenPersistenceAdapter(
     private val refreshTokenRepository: RefreshTokenRepository,
-    private val refreshTokenMapper: RefreshTokenMapper
+    private val refreshTokenMapper: RefreshTokenMapper,
+    private val jwtProperties: JwtProperties
 ): RefreshTokenSpi {
 
     override fun saveRefreshToken(refreshToken: RefreshToken) {
         val refreshTokenEntity = refreshTokenMapper.refreshTokenDomainToEntity(refreshToken)
         refreshTokenRepository.save(refreshTokenEntity)
+    }
+
+    @Transactional
+    override fun updateRefreshToken(token: String): RefreshToken {
+        val refreshToken = findByToken(token)
+        val refreshTokenEntity = refreshTokenMapper.refreshTokenDomainToEntity(refreshToken)
+        refreshTokenEntity.updateRefreshToken(token, jwtProperties.refreshExp)
+        return refreshTokenMapper.refreshTokenEntityToDomain(refreshTokenEntity)
+    }
+
+    fun findByToken(token: String): RefreshToken {
+        val refreshTokenEntity = jpaRefreshTokenByToken(token)
+        return refreshTokenMapper.refreshTokenEntityToDomain(refreshTokenEntity)
     }
 
     fun jpaRefreshTokenByToken(token: String) =
