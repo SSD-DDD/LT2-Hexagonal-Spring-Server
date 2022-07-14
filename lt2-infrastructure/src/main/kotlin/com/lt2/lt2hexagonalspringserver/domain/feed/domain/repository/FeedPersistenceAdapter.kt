@@ -26,5 +26,4 @@ class FeedPersistenceAdapter(
 
     private fun jpaFeedById(id: UUID) =
         feedRepository.findByIdOrNull(id) ?: throw FeedNotFoundException
-
 }
