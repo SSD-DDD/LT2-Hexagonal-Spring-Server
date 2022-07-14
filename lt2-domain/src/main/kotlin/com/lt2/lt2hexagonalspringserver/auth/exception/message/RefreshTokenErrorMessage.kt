@@ -1,4 +1,4 @@
-package auth.exception.message
+package com.lt2.lt2hexagonalspringserver.auth.exception.message
 
 object RefreshTokenErrorMessage {
 

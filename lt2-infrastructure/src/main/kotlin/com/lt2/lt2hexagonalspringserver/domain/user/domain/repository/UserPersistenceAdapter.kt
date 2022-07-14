@@ -2,11 +2,11 @@ package com.lt2.lt2hexagonalspringserver.domain.user.domain.repository
 
 import com.lt2.lt2hexagonalspringserver.domain.user.mapper.UserMapper
 import com.lt2.lt2hexagonalspringserver.global.annotation.Adapter
-import user.User
-import user.exception.UserAlreadyExistsException
-import user.exception.UserNotFoundException
-import user.spi.QueryUserSpi
-import user.spi.UserSpi
+import com.lt2.lt2hexagonalspringserver.user.User
+import com.lt2.lt2hexagonalspringserver.user.exception.UserAlreadyExistsException
+import com.lt2.lt2hexagonalspringserver.user.exception.UserNotFoundException
+import com.lt2.lt2hexagonalspringserver.user.spi.QueryUserSpi
+import com.lt2.lt2hexagonalspringserver.user.spi.UserSpi
 
 @Adapter
 class UserPersistenceAdapter(

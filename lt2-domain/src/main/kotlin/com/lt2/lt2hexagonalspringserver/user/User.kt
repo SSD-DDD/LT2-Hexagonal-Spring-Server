@@ -1,7 +1,7 @@
-package user
+package com.lt2.lt2hexagonalspringserver.user
 
-import annotation.Aggregate
-import user.type.Role
+import com.lt2.lt2hexagonalspringserver.annotation.Aggregate
+import com.lt2.lt2hexagonalspringserver.user.type.Role
 import java.util.UUID
 
 @Aggregate

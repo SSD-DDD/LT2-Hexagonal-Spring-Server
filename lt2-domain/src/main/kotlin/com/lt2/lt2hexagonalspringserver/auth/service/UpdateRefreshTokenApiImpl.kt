@@ -1,10 +1,10 @@
-package auth.service
+package com.lt2.lt2hexagonalspringserver.auth.service
 
-import annotation.DomainService
-import auth.api.UpdateRefreshTokenApi
-import auth.spi.RefreshTokenUpdateSpi
-import user.api.dto.response.TokenDomainResponse
-import user.spi.UserJwtTokenSpi
+import com.lt2.lt2hexagonalspringserver.annotation.DomainService
+import com.lt2.lt2hexagonalspringserver.auth.api.UpdateRefreshTokenApi
+import com.lt2.lt2hexagonalspringserver.auth.spi.RefreshTokenUpdateSpi
+import com.lt2.lt2hexagonalspringserver.user.api.dto.response.TokenDomainResponse
+import com.lt2.lt2hexagonalspringserver.user.spi.UserJwtTokenSpi
 
 @DomainService
 class UpdateRefreshTokenApiImpl(

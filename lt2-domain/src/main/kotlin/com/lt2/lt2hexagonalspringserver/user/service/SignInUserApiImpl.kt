@@ -1,13 +1,13 @@
-package user.service
+package com.lt2.lt2hexagonalspringserver.user.service
 
-import annotation.DomainService
-import user.api.SignInUserApi
-import user.api.dto.request.SignInUserDomainRequest
-import user.api.dto.response.TokenDomainResponse
-import user.exception.PasswordMismatchException
-import user.spi.UserJwtTokenSpi
-import user.spi.SecurityPasswordSpi
-import user.spi.QueryUserSpi
+import com.lt2.lt2hexagonalspringserver.annotation.DomainService
+import com.lt2.lt2hexagonalspringserver.user.api.SignInUserApi
+import com.lt2.lt2hexagonalspringserver.user.api.dto.request.SignInUserDomainRequest
+import com.lt2.lt2hexagonalspringserver.user.api.dto.response.TokenDomainResponse
+import com.lt2.lt2hexagonalspringserver.user.exception.PasswordMismatchException
+import com.lt2.lt2hexagonalspringserver.user.spi.UserJwtTokenSpi
+import com.lt2.lt2hexagonalspringserver.user.spi.SecurityPasswordSpi
+import com.lt2.lt2hexagonalspringserver.user.spi.QueryUserSpi
 
 @DomainService
 class SignInUserApiImpl(

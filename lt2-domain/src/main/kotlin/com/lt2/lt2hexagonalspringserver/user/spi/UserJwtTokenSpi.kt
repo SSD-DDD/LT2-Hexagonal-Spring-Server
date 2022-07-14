@@ -1,7 +1,7 @@
-package user.spi
+package com.lt2.lt2hexagonalspringserver.user.spi
 
-import annotation.Spi
-import user.spi.dto.SpiTokenResponse
+import com.lt2.lt2hexagonalspringserver.annotation.Spi
+import com.lt2.lt2hexagonalspringserver.user.spi.dto.SpiTokenResponse
 
 @Spi
 interface UserJwtTokenSpi {

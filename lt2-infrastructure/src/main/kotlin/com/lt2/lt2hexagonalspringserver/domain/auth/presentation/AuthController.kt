@@ -1,20 +1,20 @@
 package com.lt2.lt2hexagonalspringserver.domain.auth.presentation
 
-import auth.api.UpdateRefreshTokenApi
+import com.lt2.lt2hexagonalspringserver.auth.api.UpdateRefreshTokenApi
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestHeader
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import user.api.dto.response.TokenDomainResponse
+import com.lt2.lt2hexagonalspringserver.user.api.dto.response.TokenDomainResponse
 
 @RequestMapping("/users")
 @RestController
 class AuthController(
-    private val updateRefreshTokenApi: UpdateRefreshTokenApi
+    private val updateRefreshTokenApi: com.lt2.lt2hexagonalspringserver.auth.api.UpdateRefreshTokenApi
 ) {
 
     @PutMapping("/token")
-    fun updateRefreshToken(@RequestHeader(name = "refresh-token") token: String): TokenDomainResponse {
+    fun updateRefreshToken(@RequestHeader(name = "refresh-token") token: String): com.lt2.lt2hexagonalspringserver.user.api.dto.response.TokenDomainResponse {
         return updateRefreshTokenApi.execute(token)
     }
 }

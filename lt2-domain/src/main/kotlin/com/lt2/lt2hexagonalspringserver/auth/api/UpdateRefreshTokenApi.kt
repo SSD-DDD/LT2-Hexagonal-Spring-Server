@@ -1,6 +1,6 @@
-package auth.api
+package com.lt2.lt2hexagonalspringserver.auth.api
 
-import user.api.dto.response.TokenDomainResponse
+import com.lt2.lt2hexagonalspringserver.user.api.dto.response.TokenDomainResponse
 
 interface UpdateRefreshTokenApi {
     fun execute(token: String): TokenDomainResponse

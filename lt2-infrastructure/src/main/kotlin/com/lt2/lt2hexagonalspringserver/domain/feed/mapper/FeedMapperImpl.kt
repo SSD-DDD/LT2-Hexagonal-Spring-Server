@@ -2,10 +2,10 @@ package com.lt2.lt2hexagonalspringserver.domain.feed.mapper
 
 import com.lt2.lt2hexagonalspringserver.domain.feed.domain.FeedEntity
 import com.lt2.lt2hexagonalspringserver.domain.user.domain.repository.UserRepository
-import feed.Feed
+import com.lt2.lt2hexagonalspringserver.feed.Feed
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Component
-import user.exception.UserNotFoundException
+import com.lt2.lt2hexagonalspringserver.user.exception.UserNotFoundException
 import java.util.UUID
 
 @Component

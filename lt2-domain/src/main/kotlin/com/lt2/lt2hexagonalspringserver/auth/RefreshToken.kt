@@ -1,6 +1,6 @@
-package auth
+package com.lt2.lt2hexagonalspringserver.auth
 
-import annotation.Aggregate
+import com.lt2.lt2hexagonalspringserver.annotation.Aggregate
 
 @Aggregate
 class RefreshToken(

@@ -1,4 +1,4 @@
-package user.spi
+package com.lt2.lt2hexagonalspringserver.user.spi
 
 import java.util.*
 

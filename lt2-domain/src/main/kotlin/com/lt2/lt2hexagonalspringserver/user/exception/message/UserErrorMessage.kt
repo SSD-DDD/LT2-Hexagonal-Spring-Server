@@ -1,4 +1,4 @@
-package user.exception.message
+package com.lt2.lt2hexagonalspringserver.user.exception.message
 
 object UserErrorMessage {
 

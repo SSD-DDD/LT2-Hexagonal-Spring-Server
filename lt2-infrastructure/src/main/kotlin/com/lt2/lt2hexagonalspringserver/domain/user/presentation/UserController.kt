@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
-import user.api.CreateUserApi
-import user.api.SignInUserApi
-import user.api.dto.request.CreateUserDomainRequest
-import user.api.dto.request.SignInUserDomainRequest
-import user.api.dto.response.TokenDomainResponse
+import com.lt2.lt2hexagonalspringserver.user.api.CreateUserApi
+import com.lt2.lt2hexagonalspringserver.user.api.SignInUserApi
+import com.lt2.lt2hexagonalspringserver.user.api.dto.request.CreateUserDomainRequest
+import com.lt2.lt2hexagonalspringserver.user.api.dto.request.SignInUserDomainRequest
+import com.lt2.lt2hexagonalspringserver.user.api.dto.response.TokenDomainResponse
 import javax.validation.Valid
 
 @RequestMapping("/users")

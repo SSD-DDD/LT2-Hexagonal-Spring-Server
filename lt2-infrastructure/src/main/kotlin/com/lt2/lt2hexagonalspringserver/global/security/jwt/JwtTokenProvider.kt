@@ -1,14 +1,14 @@
 package com.lt2.lt2hexagonalspringserver.global.security.jwt
 
-import auth.RefreshToken
-import auth.spi.RefreshTokenSaveSpi
+import com.lt2.lt2hexagonalspringserver.auth.RefreshToken
+import com.lt2.lt2hexagonalspringserver.auth.spi.RefreshTokenSaveSpi
 import com.lt2.lt2hexagonalspringserver.global.security.jwt.JwtProperties.Companion.ACCESS
 import com.lt2.lt2hexagonalspringserver.global.security.jwt.JwtProperties.Companion.REFRESH
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.springframework.stereotype.Component
-import user.spi.UserJwtTokenSpi
-import user.spi.dto.SpiTokenResponse
+import com.lt2.lt2hexagonalspringserver.user.spi.UserJwtTokenSpi
+import com.lt2.lt2hexagonalspringserver.user.spi.dto.SpiTokenResponse
 import java.util.*
 
 @Component

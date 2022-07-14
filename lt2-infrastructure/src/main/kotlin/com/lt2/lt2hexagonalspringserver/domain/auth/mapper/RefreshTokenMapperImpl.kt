@@ -1,6 +1,6 @@
 package com.lt2.lt2hexagonalspringserver.domain.auth.mapper
 
-import auth.RefreshToken
+import com.lt2.lt2hexagonalspringserver.auth.RefreshToken
 import com.lt2.lt2hexagonalspringserver.domain.auth.domain.RefreshTokenEntity
 import org.springframework.stereotype.Component
 

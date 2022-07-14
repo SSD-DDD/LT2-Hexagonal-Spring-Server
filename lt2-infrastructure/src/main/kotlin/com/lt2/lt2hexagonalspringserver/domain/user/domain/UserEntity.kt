@@ -2,7 +2,7 @@ package com.lt2.lt2hexagonalspringserver.domain.user.domain
 
 import com.lt2.lt2hexagonalspringserver.global.entity.BaseUUIDEntity
 import org.jetbrains.annotations.NotNull
-import user.type.Role
+import com.lt2.lt2hexagonalspringserver.user.type.Role
 import java.util.*
 import javax.persistence.Entity
 import javax.persistence.EnumType
@@ -42,7 +42,7 @@ class UserEntity(
     @field:NotNull
     var money = money
         protected set
-    
+
     @field:Enumerated(EnumType.STRING)
     var role = role
         protected set

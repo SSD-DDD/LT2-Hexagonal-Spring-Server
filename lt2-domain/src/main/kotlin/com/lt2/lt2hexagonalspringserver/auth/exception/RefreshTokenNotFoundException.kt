@@ -1,8 +1,8 @@
-package auth.exception
+package com.lt2.lt2hexagonalspringserver.auth.exception
 
-import auth.exception.message.RefreshTokenErrorMessage.REFRESH_TOKEN_NOT_FOUND
-import error.Lt2Exception
-import error.code.GlobalErrorStatus.NOT_FOUND_404
+import com.lt2.lt2hexagonalspringserver.auth.exception.message.RefreshTokenErrorMessage.REFRESH_TOKEN_NOT_FOUND
+import com.lt2.lt2hexagonalspringserver.error.Lt2Exception
+import com.lt2.lt2hexagonalspringserver.error.code.GlobalErrorStatus.NOT_FOUND_404
 
 object RefreshTokenNotFoundException: Lt2Exception(
     NOT_FOUND_404,

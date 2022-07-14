@@ -1,4 +1,4 @@
-package annotation
+package com.lt2.lt2hexagonalspringserver.annotation
 
 import java.lang.annotation.Inherited
 

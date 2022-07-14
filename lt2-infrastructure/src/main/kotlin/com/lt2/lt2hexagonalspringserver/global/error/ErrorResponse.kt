@@ -1,6 +1,6 @@
 package com.lt2.lt2hexagonalspringserver.global.error
 
-import error.ExceptionAttribute
+import com.lt2.lt2hexagonalspringserver.error.ExceptionAttribute
 
 data class ErrorResponse(
     override val status: Int,

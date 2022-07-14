@@ -1,4 +1,4 @@
-package user.api.dto.request
+package com.lt2.lt2hexagonalspringserver.user.api.dto.request
 
 data class CreateUserDomainRequest(
 

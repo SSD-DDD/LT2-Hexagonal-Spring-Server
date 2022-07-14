@@ -1,4 +1,4 @@
-package error
+package com.lt2.lt2hexagonalspringserver.error
 
 abstract class Lt2Exception(
     override val status: Int,

@@ -1,4 +1,4 @@
-package user.api.dto.response
+package com.lt2.lt2hexagonalspringserver.user.api.dto.response
 
 data class TokenDomainResponse(
 

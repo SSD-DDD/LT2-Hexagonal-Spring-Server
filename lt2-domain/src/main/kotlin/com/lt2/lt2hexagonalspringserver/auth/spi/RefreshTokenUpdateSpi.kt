@@ -1,6 +1,6 @@
-package auth.spi
+package com.lt2.lt2hexagonalspringserver.auth.spi
 
-import auth.RefreshToken
+import com.lt2.lt2hexagonalspringserver.auth.RefreshToken
 
 interface RefreshTokenUpdateSpi {
     fun updateRefreshToken(token: String): RefreshToken

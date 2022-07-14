@@ -1,9 +1,9 @@
 package com.lt2.lt2hexagonalspringserver.global.filter
 
 import com.lt2.lt2hexagonalspringserver.global.error.ErrorResponse
-import error.Lt2Exception
-import error.code.GlobalErrorMessage.INTERNAL_SERVER_ERROR
-import error.code.GlobalErrorStatus.INTERNAL_SERVER_ERROR_500
+import com.lt2.lt2hexagonalspringserver.error.Lt2Exception
+import com.lt2.lt2hexagonalspringserver.error.code.GlobalErrorMessage.INTERNAL_SERVER_ERROR
+import com.lt2.lt2hexagonalspringserver.error.code.GlobalErrorStatus.INTERNAL_SERVER_ERROR_500
 import org.springframework.http.MediaType
 import org.springframework.web.filter.OncePerRequestFilter
 import javax.servlet.FilterChain

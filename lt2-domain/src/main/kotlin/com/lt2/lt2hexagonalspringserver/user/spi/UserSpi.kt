@@ -1,6 +1,6 @@
-package user.spi
+package com.lt2.lt2hexagonalspringserver.user.spi
 
-import annotation.Spi
+import com.lt2.lt2hexagonalspringserver.annotation.Spi
 
 @Spi
 interface UserSpi: QueryUserSpi {

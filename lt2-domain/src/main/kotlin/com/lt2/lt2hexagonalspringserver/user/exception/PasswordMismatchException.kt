@@ -1,8 +1,8 @@
-package user.exception
+package com.lt2.lt2hexagonalspringserver.user.exception
 
-import error.Lt2Exception
-import error.code.GlobalErrorStatus.UNAUTHORIZED_401
-import user.exception.message.UserErrorMessage.PASSWORD_MISMATCH
+import com.lt2.lt2hexagonalspringserver.error.Lt2Exception
+import com.lt2.lt2hexagonalspringserver.error.code.GlobalErrorStatus.UNAUTHORIZED_401
+import com.lt2.lt2hexagonalspringserver.user.exception.message.UserErrorMessage.PASSWORD_MISMATCH
 
 object PasswordMismatchException: Lt2Exception(
     UNAUTHORIZED_401,

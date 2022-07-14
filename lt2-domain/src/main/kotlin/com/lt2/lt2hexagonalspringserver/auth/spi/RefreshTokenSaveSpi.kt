@@ -1,7 +1,7 @@
-package auth.spi
+package com.lt2.lt2hexagonalspringserver.auth.spi
 
-import annotation.Spi
-import auth.RefreshToken
+import com.lt2.lt2hexagonalspringserver.annotation.Spi
+import com.lt2.lt2hexagonalspringserver.auth.RefreshToken
 
 @Spi
 interface RefreshTokenSaveSpi {

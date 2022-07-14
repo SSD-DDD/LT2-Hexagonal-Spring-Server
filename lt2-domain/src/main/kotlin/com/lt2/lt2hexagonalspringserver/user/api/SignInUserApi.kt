@@ -1,7 +1,7 @@
-package user.api
+package com.lt2.lt2hexagonalspringserver.user.api
 
-import user.api.dto.request.SignInUserDomainRequest
-import user.api.dto.response.TokenDomainResponse
+import com.lt2.lt2hexagonalspringserver.user.api.dto.request.SignInUserDomainRequest
+import com.lt2.lt2hexagonalspringserver.user.api.dto.response.TokenDomainResponse
 
 interface SignInUserApi {
     fun execute(request: SignInUserDomainRequest): TokenDomainResponse

@@ -1,6 +1,6 @@
-package feed
+package com.lt2.lt2hexagonalspringserver.feed
 
-import annotation.Aggregate
+import com.lt2.lt2hexagonalspringserver.annotation.Aggregate
 import java.util.UUID
 
 @Aggregate

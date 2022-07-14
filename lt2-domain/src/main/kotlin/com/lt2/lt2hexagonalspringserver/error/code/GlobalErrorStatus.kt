@@ -1,4 +1,4 @@
-package error.code
+package com.lt2.lt2hexagonalspringserver.error.code
 
 object GlobalErrorStatus {
 

@@ -1,15 +1,13 @@
 package com.lt2.lt2hexagonalspringserver.global.config
 
-import annotation.DomainService
-import auth.RefreshToken
+import com.lt2.lt2hexagonalspringserver.annotation.DomainService
 import org.springframework.context.annotation.ComponentScan
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.FilterType
-import user.User
 
 @Configuration
 @ComponentScan(
-    basePackageClasses = [User::class, RefreshToken::class],
+    basePackages = ["com.lt2.lt2hexagonalspringserver"],
     includeFilters = [
         ComponentScan.Filter(
             type = FilterType.ANNOTATION,
