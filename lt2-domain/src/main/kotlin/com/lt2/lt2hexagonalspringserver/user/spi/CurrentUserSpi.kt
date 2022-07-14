@@ -1,7 +1,7 @@
 package com.lt2.lt2hexagonalspringserver.user.spi
 
-import java.util.*
+import com.lt2.lt2hexagonalspringserver.user.User
 
 interface CurrentUserSpi {
-    fun currentUserId(): UUID
+    fun currentUser(): User
 }

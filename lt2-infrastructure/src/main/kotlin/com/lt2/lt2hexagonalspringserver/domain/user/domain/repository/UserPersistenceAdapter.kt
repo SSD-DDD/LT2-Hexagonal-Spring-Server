@@ -5,8 +5,8 @@ import com.lt2.lt2hexagonalspringserver.global.annotation.Adapter
 import com.lt2.lt2hexagonalspringserver.user.User
 import com.lt2.lt2hexagonalspringserver.user.exception.UserAlreadyExistsException
 import com.lt2.lt2hexagonalspringserver.user.exception.UserNotFoundException
-import com.lt2.lt2hexagonalspringserver.user.spi.QueryUserSpi
 import com.lt2.lt2hexagonalspringserver.user.spi.UserSpi
+import org.springframework.security.core.context.SecurityContextHolder
 
 @Adapter
 class UserPersistenceAdapter(
@@ -28,6 +28,11 @@ class UserPersistenceAdapter(
     override fun findByAccountId(accountId: String): User {
         val userEntity = jpaUserByAccountId(accountId)
         return userMapper.userEntityToDomain(userEntity)
+    }
+
+    override fun currentUser(): User {
+        val accountId = SecurityContextHolder.getContext().authentication.name
+        return findByAccountId(accountId)
     }
 
     fun jpaUserByAccountId(accountId: String) =
