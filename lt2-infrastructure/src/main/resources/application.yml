@@ -1,8 +1,9 @@
 spring:
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
     database: mysql
+    show-sql: true
   datasource:
     username: ${DB_USERNAME:root}
     password: ${DB_PASSWORD:rhqmffls13!}
