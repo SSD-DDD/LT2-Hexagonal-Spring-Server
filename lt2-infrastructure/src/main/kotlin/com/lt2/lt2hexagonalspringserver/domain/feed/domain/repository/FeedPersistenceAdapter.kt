@@ -19,8 +19,8 @@ class FeedPersistenceAdapter(
         feedRepository.save(feedEntity)
     }
 
-    fun findById(id: UUID): Feed {
-        val feedEntity = jpaFeedById(id)
+    fun findById(feedId: UUID): Feed {
+        val feedEntity = jpaFeedById(feedId)
         return feedMapper.feedEntityToDomain(feedEntity)
     }
 
