@@ -1,4 +1,6 @@
 package user.type
 
-class Role {
+enum class Role {
+    USER,
+    ADMIN
 }

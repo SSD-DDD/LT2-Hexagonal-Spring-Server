@@ -5,6 +5,7 @@ import com.lt2.lt2hexagonalspringserver.global.annotation.Adapter
 import user.User
 import user.exception.UserAlreadyExistsException
 import user.exception.UserNotFoundException
+import user.spi.QueryUserSpi
 import user.spi.UserSpi
 
 @Adapter
@@ -25,7 +26,7 @@ class UserPersistenceAdapter(
     }
 
     override fun findByAccountId(accountId: String): User {
-        val userEntity = userRepository.findByAccountId(accountId) ?: throw UserNotFoundException
+        val userEntity = jpaUserByAccountId(accountId)
         return userMapper.userEntityToDomain(userEntity)
     }
 

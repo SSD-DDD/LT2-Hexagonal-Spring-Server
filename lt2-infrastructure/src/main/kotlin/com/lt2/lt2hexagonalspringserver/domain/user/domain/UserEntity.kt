@@ -2,8 +2,11 @@ package com.lt2.lt2hexagonalspringserver.domain.user.domain
 
 import com.lt2.lt2hexagonalspringserver.global.entity.BaseUUIDEntity
 import org.jetbrains.annotations.NotNull
+import user.type.Role
 import java.util.*
 import javax.persistence.Entity
+import javax.persistence.EnumType
+import javax.persistence.Enumerated
 import javax.persistence.Table
 
 @Table(name = "tbl_user")
@@ -18,7 +21,9 @@ class UserEntity(
 
     name: String,
 
-    money: Long
+    money: Long,
+
+    role: Role
 
 ): BaseUUIDEntity() {
 
@@ -36,5 +41,9 @@ class UserEntity(
 
     @field:NotNull
     var money = money
+        protected set
+    
+    @field:Enumerated(EnumType.STRING)
+    var role = role
         protected set
 }

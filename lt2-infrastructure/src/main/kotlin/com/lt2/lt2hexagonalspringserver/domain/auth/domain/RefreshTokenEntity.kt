@@ -8,12 +8,27 @@ import org.springframework.data.redis.core.index.Indexed
 @RedisHash
 class RefreshTokenEntity(
 
+    accountId: String,
+
+    token: String,
+
+    ttl: Long
+) {
+
     @Id
-    val accountId: String,
+    var accountId = accountId
+        private set
 
     @Indexed
-    val token: String,
+    var token = token
+        private set
 
     @TimeToLive
-    val ttl: Long
-)
+    var ttl = ttl
+        private set
+
+    fun updateRefreshToken(token: String, ttl: Long) {
+        this.token = token
+        this.ttl = ttl
+    }
+}

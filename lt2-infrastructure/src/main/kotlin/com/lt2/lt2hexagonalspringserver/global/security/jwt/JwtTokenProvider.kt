@@ -7,17 +7,25 @@ import com.lt2.lt2hexagonalspringserver.global.security.jwt.JwtProperties.Compan
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.springframework.stereotype.Component
+import user.spi.UserJwtTokenSpi
+import user.spi.dto.SpiTokenResponse
 import java.util.*
 
 @Component
 class JwtTokenProvider(
     private val jwtProperties: JwtProperties,
     private val refreshTokenSaveSpi: RefreshTokenSaveSpi
-) {
+): UserJwtTokenSpi {
 
-    fun generateAccessToken(accountId: String) = generateToken(accountId, jwtProperties.accessExp, ACCESS)
+    override fun getToken(accountId: String) =
+        SpiTokenResponse(
+            generateAccessToken(accountId),
+            generateRefreshToken(accountId)
+        )
 
-    fun generateRefreshToken(accountId: String): String {
+    private fun generateAccessToken(accountId: String) = generateToken(accountId, jwtProperties.accessExp, ACCESS)
+
+    private fun generateRefreshToken(accountId: String): String {
         val refreshToken = generateToken(accountId, jwtProperties.refreshExp, REFRESH)
 
         refreshTokenSaveSpi.saveRefreshToken(

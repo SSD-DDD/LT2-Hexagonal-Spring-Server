@@ -31,7 +31,7 @@ class UserController(
             name = request.name
         )
 
-        createUserApi.saveUser(domainRequest)
+        createUserApi.execute(domainRequest)
     }
 
     @PostMapping("/token")
@@ -41,6 +41,6 @@ class UserController(
             password = request.password
         )
 
-        return signInUserApi.signInUser(domainRequest)
+        return signInUserApi.execute(domainRequest)
     }
 }

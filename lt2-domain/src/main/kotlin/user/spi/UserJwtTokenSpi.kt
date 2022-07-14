@@ -1,9 +1,9 @@
 package user.spi
 
 import annotation.Spi
+import user.spi.dto.SpiTokenResponse
 
 @Spi
 interface UserJwtTokenSpi {
-    fun generateAccessToken(accountId: String): String
-    fun generateRefreshToken(accountId: String): String
+    fun getToken(accountId: String): SpiTokenResponse
 }

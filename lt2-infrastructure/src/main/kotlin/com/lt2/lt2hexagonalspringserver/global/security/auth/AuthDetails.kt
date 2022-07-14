@@ -2,13 +2,18 @@ package com.lt2.lt2hexagonalspringserver.global.security.auth
 
 import com.lt2.lt2hexagonalspringserver.domain.user.domain.UserEntity
 import org.springframework.security.core.GrantedAuthority
+import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 
 class AuthDetails(
     private val userEntity: UserEntity
 ): UserDetails {
 
-    override fun getAuthorities(): MutableCollection<out GrantedAuthority> = mutableListOf()
+    override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
+        val authorities = ArrayList<GrantedAuthority>()
+        authorities.add(SimpleGrantedAuthority(userEntity.role.name))
+        return authorities
+    }
 
     override fun getPassword(): String? = null
 

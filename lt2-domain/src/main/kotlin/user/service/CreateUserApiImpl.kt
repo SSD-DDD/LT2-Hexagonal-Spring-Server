@@ -4,28 +4,30 @@ import annotation.DomainService
 import user.User
 import user.api.CreateUserApi
 import user.api.dto.request.CreateUserDomainRequest
-import user.spi.UserSecuritySpi
-import user.spi.UserRepositorySpi
+import user.spi.SecurityPasswordSpi
+import user.spi.QueryUserSpi
+import user.type.Role
 import java.util.*
 
 @DomainService
 class CreateUserApiImpl(
-    private val userRepositorySpi: UserRepositorySpi,
-    private val userPasswordSpi: UserSecuritySpi
+    private val queryUserSpi: QueryUserSpi,
+    private val securityPasswordSpi: SecurityPasswordSpi
 ): CreateUserApi {
 
-    override fun saveUser(request: CreateUserDomainRequest) {
-        userRepositorySpi.checkUserExistsByAccountId(request.accountId)
+    override fun execute(request: CreateUserDomainRequest) {
+        queryUserSpi.checkUserExistsByAccountId(request.accountId)
 
-        userRepositorySpi.saveUser(request.toUser())
+        queryUserSpi.saveUser(request.toUser())
     }
 
     private fun CreateUserDomainRequest.toUser() = User(
         id = UUID(0, 0),
         accountId = accountId,
-        password = userPasswordSpi.passwordEncode(password),
+        password = securityPasswordSpi.passwordEncode(password),
         name = name,
-        money = moneyGenerate()
+        money = moneyGenerate(),
+        role = Role.USER
     )
 
     private fun moneyGenerate() = (Math.random() * 100000 + 1 - 50000).toLong() + 50000
