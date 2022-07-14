@@ -1,4 +1,5 @@
 object Dependencies {
+
     //kotlin spring
     const val KOTLIN_REFLECT = "org.jetbrains.kotlin:kotlin-reflect"
     const val KOTLIN_JDK = "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
@@ -25,4 +26,7 @@ object Dependencies {
     const val MOCKK = "io.mockk:mockk:${DependencyVersions.MOCKK_VERSION}"
     const val SPRING_MOCKK = "com.ninja-squad:springmockk:${DependencyVersions.SPRING_MOCKK_VERSION}"
 
+    //querydsl
+    const val QUERYDSL = "com.querydsl:querydsl-jpa"
+    const val QUERYDSL_KAPT = "com.querydsl:querydsl-apt:${DependencyVersions.QUERYDSL_KAPT_VERSION}:jpa"
 }

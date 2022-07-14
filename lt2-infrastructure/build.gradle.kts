@@ -25,6 +25,8 @@ dependencies {
     implementation(Dependencies.JWT)
     implementation(Dependencies.REDIS)
     implementation(Dependencies.KOTLIN_LOGGING)
+    implementation(Dependencies.QUERYDSL)
+    kapt(Dependencies.QUERYDSL_KAPT)
     testImplementation(Dependencies.MOCKK)
     testImplementation(Dependencies.SPRING_MOCKK)
     implementation(project(":lt2-domain"))
