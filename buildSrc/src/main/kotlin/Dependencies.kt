@@ -14,4 +14,6 @@ object Dependencies {
     const val JWT = "io.jsonwebtoken:jjwt:${DependencyVersions.JWT_VERSION}"
 
     const val REDIS = "org.springframework.boot:spring-boot-starter-data-redis"
+
+    const val KOTLIN_LOGGING = "io.github.microutils:kotlin-logging-jvm:${DependencyVersions.KOTLIN_LOGGING_VERSION}"
 }

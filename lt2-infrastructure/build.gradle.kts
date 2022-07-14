@@ -24,6 +24,7 @@ dependencies {
     implementation(Dependencies.JACKSON)
     implementation(Dependencies.JWT)
     implementation(Dependencies.REDIS)
+    implementation(Dependencies.KOTLIN_LOGGING)
     implementation(project(":lt2-domain"))
 }
 
