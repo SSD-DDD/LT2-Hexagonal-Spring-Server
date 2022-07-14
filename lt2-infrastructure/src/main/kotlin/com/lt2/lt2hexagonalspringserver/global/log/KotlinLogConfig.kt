@@ -1,0 +1,4 @@
+package com.lt2.lt2hexagonalspringserver.global.log
+
+object KotlinLogConfig {
+}
