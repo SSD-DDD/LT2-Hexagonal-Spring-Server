@@ -26,7 +26,10 @@ class ExceptionFilter : OncePerRequestFilter() {
                 val errorStatus = (e.cause as Lt2Exception).status
                 val errorMessage = (e.cause as Lt2Exception).message
                 errorToJson(errorStatus, errorMessage, response)
-            } else errorToJson(INTERNAL_SERVER_ERROR_500, INTERNAL_SERVER_ERROR, response)
+            } else {
+                errorToJson(INTERNAL_SERVER_ERROR_500, INTERNAL_SERVER_ERROR, response)
+                logger.error(e.message)
+            }
         }
     }
 
