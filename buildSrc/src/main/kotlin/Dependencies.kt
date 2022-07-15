@@ -27,6 +27,6 @@ object Dependencies {
     const val SPRING_MOCKK = "com.ninja-squad:springmockk:${DependencyVersions.SPRING_MOCKK_VERSION}"
 
     //querydsl
-    const val QUERYDSL = "com.querydsl:querydsl-jpa"
-    const val QUERYDSL_KAPT = "com.querydsl:querydsl-apt:${DependencyVersions.QUERYDSL_KAPT_VERSION}:jpa"
+    const val QUERYDSL = "com.querydsl:querydsl-jpa:${DependencyVersions.QUERYDSL_VERSION}"
+    const val QUERYDSL_KAPT = "com.querydsl:querydsl-apt:${DependencyVersions.QUERYDSL_VERSION}:jpa"
 }
