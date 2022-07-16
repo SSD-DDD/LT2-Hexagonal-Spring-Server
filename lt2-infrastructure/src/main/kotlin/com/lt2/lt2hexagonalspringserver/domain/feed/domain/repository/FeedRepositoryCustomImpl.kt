@@ -30,7 +30,7 @@ class FeedRepositoryCustomImpl(
             .limit(size)
             .fetch()
 
-        return feedVO.map {
+        val feedResponse = feedVO.map {
             FeedResponse(
                 feedId = it.feedId,
                 title = it.title,
@@ -39,5 +39,7 @@ class FeedRepositoryCustomImpl(
                 createAt = it.createAt
             )
         }.toList()
+
+        return feedResponse
     }
 }
