@@ -27,8 +27,6 @@ dependencies {
     implementation(Dependencies.KOTLIN_LOGGING)
     kapt(Dependencies.QUERYDSL_KAPT)
     implementation(Dependencies.QUERYDSL)
-    testImplementation(Dependencies.MOCKK)
-    testImplementation(Dependencies.SPRING_MOCKK)
     implementation(project(":lt2-domain"))
 }
 

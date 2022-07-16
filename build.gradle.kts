@@ -13,10 +13,15 @@ subprojects {
         version = PluginVersions.KAPT_VERSION
     }
 
+    apply {
+        plugin("jacoco")
+    }
+
     dependencies {
         implementation(Dependencies.KOTLIN_REFLECT)
         implementation(Dependencies.KOTLIN_JDK)
         testImplementation(Dependencies.SPRING_TEST)
+        testImplementation(Dependencies.MOCKITO)
     }
 }
 
