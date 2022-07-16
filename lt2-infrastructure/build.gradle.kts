@@ -29,6 +29,7 @@ dependencies {
     implementation(Dependencies.QUERYDSL)
     testImplementation(Dependencies.MOCKK)
     testImplementation(Dependencies.SPRING_MOCKK)
+    testImplementation(Dependencies.H2)
     implementation(project(":lt2-domain"))
 }
 

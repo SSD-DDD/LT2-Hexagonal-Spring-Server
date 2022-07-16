@@ -25,6 +25,7 @@ object Dependencies {
     const val SPRING_TEST = "org.springframework.boot:spring-boot-starter-test:${PluginVersions.SPRING_BOOT_VERSION}"
     const val MOCKK = "io.mockk:mockk:${DependencyVersions.MOCKK_VERSION}"
     const val SPRING_MOCKK = "com.ninja-squad:springmockk:${DependencyVersions.SPRING_MOCKK_VERSION}"
+    const val H2 = "com.h2database:h2:${DependencyVersions.H2_VERSION}"
 
     //querydsl
     const val QUERYDSL = "com.querydsl:querydsl-jpa:${DependencyVersions.QUERYDSL_VERSION}"

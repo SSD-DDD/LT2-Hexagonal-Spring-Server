@@ -4,4 +4,5 @@ object DependencyVersions {
     const val MOCKK_VERSION = "1.12.3"
     const val SPRING_MOCKK_VERSION = "3.1.1"
     const val QUERYDSL_VERSION = "5.0.0"
+    const val H2_VERSION = "1.4.200"
 }
