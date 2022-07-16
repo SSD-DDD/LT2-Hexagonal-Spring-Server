@@ -28,7 +28,7 @@ class FeedPersistenceAdapter(
     }
 
     @Transactional(readOnly = true)
-    override fun findAll(page: Int): List<FeedResponse> = feedRepository.findAll(page)
+    override fun findAll(page: Int): List<FeedResponse> = feedRepository.findAllAsc(page)
 
     private fun jpaFeedById(id: UUID) =
         feedRepository.findByIdOrNull(id) ?: throw FeedNotFoundException

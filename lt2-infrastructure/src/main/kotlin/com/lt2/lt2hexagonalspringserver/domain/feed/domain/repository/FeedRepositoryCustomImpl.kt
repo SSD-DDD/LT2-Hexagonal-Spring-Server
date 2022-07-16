@@ -10,7 +10,7 @@ class FeedRepositoryCustomImpl(
     private val jpaQueryFactory: JPAQueryFactory
 ): FeedRepositoryCustom {
 
-    override fun findAll(page: Int): List<FeedResponse> {
+    override fun findAllAsc(page: Int): List<FeedResponse> {
         val size: Long = 10
 
         val feedVO = jpaQueryFactory
@@ -25,7 +25,7 @@ class FeedRepositoryCustomImpl(
             )
             .from(feedEntity)
             .join(feedEntity.userEntity, userEntity)
-            .orderBy(feedEntity.createdAt.desc())
+            .orderBy(feedEntity.createdAt.asc())
             .offset(page * size)
             .limit(size)
             .fetch()
