@@ -25,6 +25,7 @@ class FeedRepositoryCustomImpl(
             )
             .from(feedEntity)
             .join(feedEntity.userEntity, userEntity)
+            .orderBy(feedEntity.createdAt.desc())
             .offset(page * size)
             .limit(size)
             .fetch()
