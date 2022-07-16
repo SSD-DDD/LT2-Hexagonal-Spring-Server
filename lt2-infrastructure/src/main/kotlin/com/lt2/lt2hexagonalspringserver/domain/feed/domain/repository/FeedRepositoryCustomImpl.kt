@@ -1,13 +1,10 @@
 package com.lt2.lt2hexagonalspringserver.domain.feed.domain.repository
 
 import com.lt2.lt2hexagonalspringserver.domain.feed.domain.QFeedEntity.feedEntity
-import com.lt2.lt2hexagonalspringserver.domain.feed.domain.repository.vo.FeedVO
 import com.lt2.lt2hexagonalspringserver.domain.feed.domain.repository.vo.QFeedVO
 import com.lt2.lt2hexagonalspringserver.domain.user.domain.QUserEntity.userEntity
 import com.lt2.lt2hexagonalspringserver.feed.api.dto.respons.FeedResponse
-import com.lt2.lt2hexagonalspringserver.feed.exception.FeedNotFoundException
 import com.querydsl.jpa.impl.JPAQueryFactory
-import java.util.*
 
 class FeedRepositoryCustomImpl(
     private val jpaQueryFactory: JPAQueryFactory
@@ -33,14 +30,13 @@ class FeedRepositoryCustomImpl(
             .fetch()
 
         return feedVO.map {
-                FeedResponse(
-                    feedId = it.feedId,
-                    title = it.title,
-                    content = it.content,
-                    userId = it.userId,
-                    createAt = it.createAt
-                )
-        }
-            .toList()
+            FeedResponse(
+                feedId = it.feedId,
+                title = it.title,
+                content = it.content,
+                userId = it.userId,
+                createAt = it.createAt
+            )
+        }.toList()
     }
 }

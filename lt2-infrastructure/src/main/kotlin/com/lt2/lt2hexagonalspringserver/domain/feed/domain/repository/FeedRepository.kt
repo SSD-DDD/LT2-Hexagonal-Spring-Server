@@ -6,5 +6,5 @@ import org.springframework.stereotype.Repository
 import java.util.UUID
 
 @Repository
-interface FeedRepository: CrudRepository<FeedEntity, UUID> {
+interface FeedRepository: CrudRepository<FeedEntity, UUID>, FeedRepositoryCustom {
 }
