@@ -1,2 +1,7 @@
 dependencies {
 }
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
