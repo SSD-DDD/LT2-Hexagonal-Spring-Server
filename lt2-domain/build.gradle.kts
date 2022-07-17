@@ -1,7 +1,2 @@
 dependencies {
 }
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}

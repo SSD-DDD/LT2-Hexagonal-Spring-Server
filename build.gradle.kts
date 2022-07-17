@@ -1,6 +1,5 @@
 plugins {
     kotlin("jvm") version PluginVersions.JVM_VERSION
-    id("jacoco")
 }
 
 subprojects {
@@ -12,10 +11,6 @@ subprojects {
     apply {
         plugin("org.jetbrains.kotlin.kapt")
         version = PluginVersions.KAPT_VERSION
-    }
-
-    apply {
-        plugin("jacoco")
     }
 
     dependencies {
@@ -30,16 +25,6 @@ subprojects {
 allprojects {
     group = "com.lt2"
     version = "0.0.1-SNAPSHOT"
-
-    tasks.jacocoTestReport {
-        classDirectories.setFrom(
-            files(classDirectories.files.map {
-                fileTree(it) {
-                    exclude("**", "**")
-                }
-            })
-        )
-    }
 
     tasks {
         compileKotlin {
