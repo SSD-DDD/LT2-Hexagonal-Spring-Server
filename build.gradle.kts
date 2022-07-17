@@ -42,10 +42,10 @@ allprojects {
             useJUnitPlatform()
         }
     }
-}
 
-repositories {
-    mavenCentral()
+    repositories {
+        mavenCentral()
+    }
 }
 
 tasks.getByName<Jar>("jar") {
