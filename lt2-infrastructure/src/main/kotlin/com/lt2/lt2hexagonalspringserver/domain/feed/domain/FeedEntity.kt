@@ -36,4 +36,9 @@ class FeedEntity(
     @JoinColumn(name = "user_id")
     var userEntity = userEntity
         protected set
+
+    fun updateFeed(title: String, content: String) {
+        this.title = title
+        this.content = content
+    }
 }

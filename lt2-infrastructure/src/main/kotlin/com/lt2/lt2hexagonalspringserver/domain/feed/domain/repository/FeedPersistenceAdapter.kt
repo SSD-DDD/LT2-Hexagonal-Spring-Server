@@ -3,6 +3,7 @@ package com.lt2.lt2hexagonalspringserver.domain.feed.domain.repository
 import com.lt2.lt2hexagonalspringserver.domain.feed.mapper.FeedMapper
 import com.lt2.lt2hexagonalspringserver.global.annotation.Adapter
 import com.lt2.lt2hexagonalspringserver.feed.Feed
+import com.lt2.lt2hexagonalspringserver.feed.api.dto.request.UpdateFeedDomainRequest
 import com.lt2.lt2hexagonalspringserver.feed.api.dto.respons.FeedResponse
 import com.lt2.lt2hexagonalspringserver.feed.exception.FeedNotFoundException
 import com.lt2.lt2hexagonalspringserver.feed.spi.FeedSpi
@@ -29,6 +30,13 @@ class FeedPersistenceAdapter(
 
     @Transactional(readOnly = true)
     override fun findAll(page: Int): List<FeedResponse> = feedRepository.findAllAsc(page)
+
+    @Transactional
+    override fun updateFeed(feedId: UUID, request: UpdateFeedDomainRequest) {
+        val feed = findById(feedId)
+        val feedEntity = feedMapper.feedDomainToEntity(feed)
+        feedEntity.updateFeed(request.title, request.content)
+    }
 
     private fun jpaFeedById(id: UUID) =
         feedRepository.findByIdOrNull(id) ?: throw FeedNotFoundException
