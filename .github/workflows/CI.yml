@@ -28,4 +28,4 @@ jobs:
         uses: codecov/codecov-action@v2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./lt2-domain/build/reports/jacoco/jacocoRootReport/jacocoRootReport.xml
+          files: /**/lt2-domain/build/reports/jacoco/jacocoRootReport/jacocoRootReport.xml
