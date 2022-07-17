@@ -23,7 +23,8 @@ object Dependencies {
 
     //test
     const val SPRING_TEST = "org.springframework.boot:spring-boot-starter-test:${PluginVersions.SPRING_BOOT_VERSION}"
-    const val MOCKITO = "org.mockito:mockito-core:${DependencyVersions.MOCKITO_VERSION}"
+    const val MOCKITO = "com.nhaarman.mockitokotlin2:mockito-kotlin:${DependencyVersions.MOCKITO_VERSION}"
+    const val MOCKITO_INLINE = "org.mockito:mockito-inline:${DependencyVersions.MOCKITO_INLINE_VERSION}"
 
     //querydsl
     const val QUERYDSL = "com.querydsl:querydsl-jpa:${DependencyVersions.QUERYDSL_VERSION}"
