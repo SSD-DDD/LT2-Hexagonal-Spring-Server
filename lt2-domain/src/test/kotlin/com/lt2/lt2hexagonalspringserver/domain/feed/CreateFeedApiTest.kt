@@ -2,9 +2,9 @@ package com.lt2.lt2hexagonalspringserver.domain.feed
 
 import com.lt2.lt2hexagonalspringserver.feed.api.CreateFeedApi
 import com.lt2.lt2hexagonalspringserver.feed.api.dto.request.CreateFeedDomainRequest
+import com.nhaarman.mockitokotlin2.given
 import com.nhaarman.mockitokotlin2.mock
 import org.junit.jupiter.api.Test
-import org.mockito.BDDMockito.given
 
 class CreateFeedApiTest {
 
