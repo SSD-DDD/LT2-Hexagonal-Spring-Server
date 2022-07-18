@@ -6,7 +6,7 @@ import java.util.UUID
 @Aggregate
 class Feed(
 
-    val id: UUID,
+    val feedId: UUID,
 
     val title: String,
 
