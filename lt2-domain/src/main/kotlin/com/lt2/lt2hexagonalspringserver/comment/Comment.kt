@@ -6,7 +6,9 @@ import java.util.UUID
 @Aggregate
 class Comment(
 
-    val id: UUID,
+    val commentId: UUID,
+
+    val content: String,
 
     val userId: UUID,
 
