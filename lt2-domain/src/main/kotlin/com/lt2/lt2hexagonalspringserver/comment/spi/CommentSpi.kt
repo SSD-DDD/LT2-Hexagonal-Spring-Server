@@ -1,4 +1,7 @@
 package com.lt2.lt2hexagonalspringserver.comment.spi
 
-interface CommentSpi {
+import com.lt2.lt2hexagonalspringserver.annotation.Spi
+
+@Spi
+interface CommentSpi: QueryCommentSpi {
 }
