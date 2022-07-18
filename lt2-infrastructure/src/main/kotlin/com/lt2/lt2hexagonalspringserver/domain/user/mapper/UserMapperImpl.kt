@@ -9,7 +9,7 @@ class UserMapperImpl: UserMapper {
 
     override fun userDomainToEntity(user: User) =
         UserEntity(
-            id = user.userId,
+            id = user.id,
             accountId = user.accountId,
             password = user.password,
             name = user.name,
@@ -19,7 +19,7 @@ class UserMapperImpl: UserMapper {
 
     override fun userEntityToDomain(userEntity: UserEntity) =
         User(
-            userId = userEntity.id,
+            id = userEntity.id,
             accountId = userEntity.accountId,
             password = userEntity.password,
             name = userEntity.name,
