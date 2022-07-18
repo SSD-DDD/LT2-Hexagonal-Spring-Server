@@ -23,7 +23,7 @@ class CreateUserApiImpl(
 
     private fun CreateUserDomainRequest.toUser() =
         User(
-            userId = UUID(0, 0),
+            id = UUID(0, 0),
             accountId = accountId,
             password = securityPasswordSpi.passwordEncode(password),
             name = name,
