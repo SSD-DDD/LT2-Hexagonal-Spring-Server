@@ -7,8 +7,10 @@ import com.lt2.lt2hexagonalspringserver.domain.user.domain.repository.UserReposi
 import com.lt2.lt2hexagonalspringserver.feed.exception.FeedNotFoundException
 import com.lt2.lt2hexagonalspringserver.user.exception.UserNotFoundException
 import org.springframework.data.repository.findByIdOrNull
+import org.springframework.stereotype.Component
 import java.util.UUID
 
+@Component
 class CommentMapperImpl(
     private val feedRepository: FeedRepository,
     private val userRepository: UserRepository
