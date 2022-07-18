@@ -15,20 +15,20 @@ class FeedMapperImpl(
 
     override fun feedDomainToEntity(feed: Feed) =
         FeedEntity(
-            id = feed.id,
+            id = feed.feedId,
             title = feed.title,
             content = feed.content,
-            userEntity = findById(feed.userId)
+            userEntity = findByUserId(feed.userId)
         )
 
     override fun feedEntityToDomain(feedEntity: FeedEntity) =
         Feed(
-            id = feedEntity.id,
+            feedId = feedEntity.id,
             title = feedEntity.title,
             content = feedEntity.content,
             userId = feedEntity.userEntity.id
         )
 
-    private fun findById(id: UUID) =
+    private fun findByUserId(id: UUID) =
         userRepository.findByIdOrNull(id) ?: throw UserNotFoundException
 }
