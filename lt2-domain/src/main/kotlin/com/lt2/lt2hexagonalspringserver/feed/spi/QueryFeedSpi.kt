@@ -11,4 +11,5 @@ interface QueryFeedSpi {
     fun saveFeed(feed: Feed)
     fun findAll(page: Int): List<FeedResponse>
     fun updateFeed(feedId: UUID, request: UpdateFeedDomainRequest)
+    fun deleteFeed(feedId: UUID)
 }

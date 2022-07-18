@@ -23,11 +23,6 @@ class FeedPersistenceAdapter(
         feedRepository.save(feedEntity)
     }
 
-    fun findById(feedId: UUID): Feed {
-        val feedEntity = jpaFeedById(feedId)
-        return feedMapper.feedEntityToDomain(feedEntity)
-    }
-
     @Transactional(readOnly = true)
     override fun findAll(page: Int): List<FeedResponse> = feedRepository.findAllAsc(page)
 
@@ -36,6 +31,18 @@ class FeedPersistenceAdapter(
         val feed = findById(feedId)
         val feedEntity = feedMapper.feedDomainToEntity(feed)
         feedEntity.updateFeed(request.title, request.content)
+    }
+
+    @Transactional
+    override fun deleteFeed(feedId: UUID) {
+        val feed = findById(feedId)
+        val feedEntity = feedMapper.feedDomainToEntity(feed)
+        feedRepository.delete(feedEntity)
+    }
+
+    private fun findById(feedId: UUID): Feed {
+        val feedEntity = jpaFeedById(feedId)
+        return feedMapper.feedEntityToDomain(feedEntity)
     }
 
     private fun jpaFeedById(id: UUID) =
