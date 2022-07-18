@@ -23,6 +23,6 @@ class CreatFeedApiImpl(
             feedId = UUID(0, 0),
             title = title,
             content = content,
-            userId = currentUserSpi.currentUser().userId
+            userId = currentUserSpi.currentUser().id
         )
 }
