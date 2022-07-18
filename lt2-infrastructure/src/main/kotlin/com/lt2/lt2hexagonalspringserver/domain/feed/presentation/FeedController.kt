@@ -2,11 +2,13 @@ package com.lt2.lt2hexagonalspringserver.domain.feed.presentation
 
 import com.lt2.lt2hexagonalspringserver.domain.feed.presentation.dto.request.CreateFeedWebRequest
 import com.lt2.lt2hexagonalspringserver.feed.api.CreateFeedApi
+import com.lt2.lt2hexagonalspringserver.feed.api.DeleteFeedApi
 import com.lt2.lt2hexagonalspringserver.feed.api.QueryFeedListApi
 import com.lt2.lt2hexagonalspringserver.feed.api.UpdateFeedApi
 import com.lt2.lt2hexagonalspringserver.feed.api.dto.request.CreateFeedDomainRequest
 import com.lt2.lt2hexagonalspringserver.feed.api.dto.request.UpdateFeedDomainRequest
 import org.springframework.http.HttpStatus
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -24,7 +26,8 @@ import javax.validation.Valid
 class FeedController(
     private val createFeedApi: CreateFeedApi,
     private val queryFeedListApi: QueryFeedListApi,
-    private val updateFeedApi: UpdateFeedApi
+    private val updateFeedApi: UpdateFeedApi,
+    private val deleteFeedApi: DeleteFeedApi
 ) {
 
     @ResponseStatus(HttpStatus.CREATED)
@@ -51,4 +54,7 @@ class FeedController(
 
         updateFeedApi.execute(feedId, feedDomainRequest)
     }
+
+    @DeleteMapping("/{feed-id}")
+    fun deleteFeed(@PathVariable(name = "feed-id") feedId: UUID) = deleteFeedApi.execute(feedId)
 }
