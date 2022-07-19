@@ -36,13 +36,13 @@ class CommentController(
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PatchMapping("/{feed-id}")
-    fun updateComment(@PathVariable(name = "feed-id") feedId: UUID,
+    @PatchMapping("/{comment-id}")
+    fun updateComment(@PathVariable(name = "comment-id") commentId: UUID,
                       @RequestBody @Valid request: UpdateCommentWebRequest) {
         val commentDomainRequest = UpdateCommentDomainRequest(
             content = request.content
         )
 
-        updateCommentApi.execute(feedId, commentDomainRequest)
+        updateCommentApi.execute(commentId, commentDomainRequest)
     }
 }

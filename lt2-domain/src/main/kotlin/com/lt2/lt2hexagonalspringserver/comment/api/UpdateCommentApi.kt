@@ -4,5 +4,5 @@ import com.lt2.lt2hexagonalspringserver.comment.api.dto.request.UpdateCommentDom
 import java.util.UUID
 
 interface UpdateCommentApi {
-    fun execute(feedId: UUID, request: UpdateCommentDomainRequest)
+    fun execute(commentId: UUID, request: UpdateCommentDomainRequest)
 }
