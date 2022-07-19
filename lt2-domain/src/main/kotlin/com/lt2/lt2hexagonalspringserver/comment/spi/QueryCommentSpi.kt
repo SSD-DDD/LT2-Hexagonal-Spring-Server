@@ -9,4 +9,5 @@ import java.util.*
 interface QueryCommentSpi {
     fun saveComment(comment: Comment)
     fun updateComment(commentId: UUID, request: UpdateCommentDomainRequest)
+    fun deleteComment(commentId: UUID)
 }

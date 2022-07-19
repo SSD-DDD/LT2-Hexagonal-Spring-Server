@@ -29,6 +29,13 @@ class CommentPersistenceAdapter(
         commentEntity.updateComment(request.content)
     }
 
+    @Transactional
+    override fun deleteComment(commentId: UUID) {
+        val comment = findById(commentId)
+        val commentEntity = commentMapper.commentDomainToEntity(comment)
+        commentRepository.delete(commentEntity)
+    }
+
 
     private fun findById(commentId: UUID): Comment {
         val commentEntity = jpaCommentById(commentId)

@@ -1,12 +1,14 @@
 package com.lt2.lt2hexagonalspringserver.domain.comment.presentation
 
 import com.lt2.lt2hexagonalspringserver.comment.api.CreateCommentApi
+import com.lt2.lt2hexagonalspringserver.comment.api.DeleteCommentApi
 import com.lt2.lt2hexagonalspringserver.comment.api.UpdateCommentApi
 import com.lt2.lt2hexagonalspringserver.comment.api.dto.request.CreateCommentDomainRequest
 import com.lt2.lt2hexagonalspringserver.comment.api.dto.request.UpdateCommentDomainRequest
 import com.lt2.lt2hexagonalspringserver.domain.comment.presentation.dto.request.UpdateCommentWebRequest
 import com.lt2.lt2hexagonalspringserver.domain.comment.presentation.dto.request.CreateCommentWebRequest
 import org.springframework.http.HttpStatus
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
@@ -21,7 +23,8 @@ import javax.validation.Valid
 @RestController
 class CommentController(
     private val createCommentApi: CreateCommentApi,
-    private val updateCommentApi: UpdateCommentApi
+    private val updateCommentApi: UpdateCommentApi,
+    private val deleteCommentApi: DeleteCommentApi
 ) {
 
     @ResponseStatus(HttpStatus.CREATED)
@@ -45,4 +48,8 @@ class CommentController(
 
         updateCommentApi.execute(commentId, commentDomainRequest)
     }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{comment-id}")
+    fun deleteComment(@PathVariable(name = "comment-id") commentId: UUID) =  deleteCommentApi.execute(commentId)
 }
