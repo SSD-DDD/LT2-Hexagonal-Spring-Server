@@ -1,2 +1,9 @@
-package com.lt2.lt2hexagonalspringserver.domain.comment.presentation.d 
+package com.lt2.lt2hexagonalspringserver.domain.comment.presentation.dto.request
 
+import javax.validation.constraints.NotBlank
+
+data class UpdateCommentWebRequest(
+
+    @field:NotBlank
+    val content: String
+)

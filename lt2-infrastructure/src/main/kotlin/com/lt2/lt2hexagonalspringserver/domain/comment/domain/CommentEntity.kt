@@ -36,4 +36,8 @@ class CommentEntity(
     @JoinColumn(name = "feed_id")
     var feedEntity = feedEntity
         protected set
+
+    fun updateComment(content: String) {
+        this.content = content
+    }
 }
