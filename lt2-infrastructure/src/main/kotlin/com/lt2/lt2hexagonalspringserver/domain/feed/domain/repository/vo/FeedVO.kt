@@ -14,5 +14,5 @@ data class FeedVO @QueryProjection constructor(
 
     val userId: UUID,
 
-    val createAt: ZonedDateTime
+    val createdAt: ZonedDateTime
 )

@@ -4,7 +4,7 @@ import com.lt2.lt2hexagonalspringserver.domain.feed.mapper.FeedMapper
 import com.lt2.lt2hexagonalspringserver.global.annotation.Adapter
 import com.lt2.lt2hexagonalspringserver.feed.Feed
 import com.lt2.lt2hexagonalspringserver.feed.api.dto.request.UpdateFeedDomainRequest
-import com.lt2.lt2hexagonalspringserver.feed.api.dto.respons.FeedResponse
+import com.lt2.lt2hexagonalspringserver.feed.api.dto.response.FeedResponse
 import com.lt2.lt2hexagonalspringserver.feed.exception.FeedNotFoundException
 import com.lt2.lt2hexagonalspringserver.feed.spi.FeedSpi
 import org.springframework.data.repository.findByIdOrNull

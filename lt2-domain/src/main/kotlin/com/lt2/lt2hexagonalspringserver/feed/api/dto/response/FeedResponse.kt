@@ -1,4 +1,4 @@
-package com.lt2.lt2hexagonalspringserver.feed.api.dto.respons
+package com.lt2.lt2hexagonalspringserver.feed.api.dto.response
 
 import com.lt2.lt2hexagonalspringserver.comment.api.dto.response.CommentResponse
 import java.time.ZonedDateTime
