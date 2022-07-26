@@ -29,4 +29,7 @@ object Dependencies {
     //querydsl
     const val QUERYDSL = "com.querydsl:querydsl-jpa:${DependencyVersions.QUERYDSL_VERSION}"
     const val QUERYDSL_KAPT = "com.querydsl:querydsl-apt:${DependencyVersions.QUERYDSL_VERSION}:jpa"
+
+    //socket.io
+    const val SOCKET_IO = "com.corundumstudio.socketio:netty-socketio:${DependencyVersions.SOCKET_IO_VERSION}"
 }

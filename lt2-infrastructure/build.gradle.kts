@@ -27,6 +27,7 @@ dependencies {
     implementation(Dependencies.KOTLIN_LOGGING)
     kapt(Dependencies.QUERYDSL_KAPT)
     implementation(Dependencies.QUERYDSL)
+    implementation(Dependencies.SOCKET_IO)
     implementation(project(":lt2-domain"))
 }
 
