@@ -10,5 +10,9 @@ class DeleteFeedApiImpl(
     private val queryFeedSpi: QueryFeedSpi
 ): DeleteFeedApi {
 
-    override fun execute(feedId: UUID) = queryFeedSpi.deleteFeed(feedId)
+    override fun execute(feedId: UUID) {
+        val feed = queryFeedSpi.findById(feedId)
+
+        queryFeedSpi.deleteFeed(feed)
+    }
 }

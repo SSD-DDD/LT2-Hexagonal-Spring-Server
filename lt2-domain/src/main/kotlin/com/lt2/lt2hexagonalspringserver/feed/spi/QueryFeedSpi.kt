@@ -9,7 +9,9 @@ import java.util.UUID
 @Spi
 interface QueryFeedSpi {
     fun saveFeed(feed: Feed)
+
+    fun findById(feedId: UUID): Feed
     fun findAll(page: Int): List<FeedResponse>
     fun updateFeed(feedId: UUID, request: UpdateFeedDomainRequest)
-    fun deleteFeed(feedId: UUID)
+    fun deleteFeed(feed: Feed)
 }

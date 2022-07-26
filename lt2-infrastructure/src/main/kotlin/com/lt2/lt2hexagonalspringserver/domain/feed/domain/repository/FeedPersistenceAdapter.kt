@@ -34,13 +34,12 @@ class FeedPersistenceAdapter(
     }
 
     @Transactional
-    override fun deleteFeed(feedId: UUID) {
-        val feed = findById(feedId)
+    override fun deleteFeed(feed: Feed) {
         val feedEntity = feedMapper.feedDomainToEntity(feed)
         feedRepository.delete(feedEntity)
     }
 
-    private fun findById(feedId: UUID): Feed {
+    override fun findById(feedId: UUID): Feed {
         val feedEntity = jpaFeedById(feedId)
         return feedMapper.feedEntityToDomain(feedEntity)
     }
