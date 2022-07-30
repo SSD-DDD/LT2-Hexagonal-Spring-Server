@@ -10,11 +10,11 @@ import com.lt2.lt2hexagonalspringserver.user.api.dto.response.TokenDomainRespons
 @RequestMapping("/users")
 @RestController
 class AuthController(
-    private val updateRefreshTokenApi: com.lt2.lt2hexagonalspringserver.auth.api.UpdateRefreshTokenApi
+    private val updateRefreshTokenApi: UpdateRefreshTokenApi
 ) {
 
     @PutMapping("/token")
-    fun updateRefreshToken(@RequestHeader(name = "refresh-token") token: String): com.lt2.lt2hexagonalspringserver.user.api.dto.response.TokenDomainResponse {
+    fun updateRefreshToken(@RequestHeader(name = "refresh-token") token: String): TokenDomainResponse {
         return updateRefreshTokenApi.execute(token)
     }
 }
