@@ -12,7 +12,7 @@ import java.util.UUID
 
 class FeedRepositoryCustomImpl(
     private val jpaQueryFactory: JPAQueryFactory
-) : FeedRepositoryCustom {
+): FeedRepositoryCustom {
 
     override fun findAllAsc(page: Int): List<FeedResponse> {
         val size: Long = 10
@@ -35,6 +35,7 @@ class FeedRepositoryCustomImpl(
             .fetch()
 
         val feedResponse = feedVO.map { feed ->
+
             FeedResponse(
                 feedId = feed.feedId,
                 title = feed.title,
@@ -74,3 +75,4 @@ class FeedRepositoryCustomImpl(
             .orderBy(commentEntity.createdAt.asc())
             .fetch()
 }
+
