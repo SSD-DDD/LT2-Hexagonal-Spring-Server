@@ -1,4 +1,4 @@
-package com.lt2.lt2hexagonalspringserver.domain.room
+package com.lt2.lt2hexagonalspringserver.domain.room.domain
 
 import com.lt2.lt2hexagonalspringserver.global.entity.BaseTimeEntity
 import java.util.*
@@ -11,7 +11,10 @@ class RoomEntity(
 
     override val id: UUID,
 
+    title: String,
 
 ): BaseTimeEntity() {
 
+    var title = title
+        protected set
 }
